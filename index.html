@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    	<script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+    	<link rel="icon" type="image/icon" href="favicon.ico" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    	<title>Chat-Video</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    	<link href="emojipicker/lib/css/emoji.css" rel="stylesheet">
+    	<link rel="stylesheet" href="estilo.css">
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/css/bootstrap-select.min.css">
+    	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.7/dist/js/bootstrap-select.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
+  	</head>
+
+	<body>
+		<!--Start Header-->
+		<header>
+			<!--Navbar Bootstrap-->
+			<nav class="navbar navbar-default" id="header">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a href="index.html" class="navbar-brand" title="Chat-Video" id="logotipe">Chat-Video</a>
+					</div>
+
+					<div>
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="login.html" id="menu-log"><i class="fas fa-door-closed"></i> Login</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!--Final Header-->
+
+		<!--Page Content-->
+
+		<!--Create a section of video -->
+		<div id="section">
+			<div id="screen">
+				<div class="screen-box">
+					<div id="video-container" class="video-container">
+						<!--Video Remote-->
+						<div id="video-container-remote" class="video-container-remote">
+							<video id="video-remote" class="video-remote" controls autoplay></video>
+						</div>
+						<!--Video Client-->
+						<div id="video-container-client" class="video-container-client">
+							<video id="video-client" class="video-client" controls autoplay muted></video>
+						</div>
+					</div>
+
+					<!--Create a box chat container-->
+					<div id="chat-container" class="chat-container">
+						<!--Buttons Start - Stop - Country -->
+						<div class="buttons">
+							<div class="buttons_env">
+	                            <button type="button" onclick="btnstart();" id="btnstart" class="btn btn-primary" >Start</button>
+								<button type="button" onclick="btnstop();" class="btn btn-danger" id="btnstop">Stop</button>
+
+								<div class="btn-group">
+									<select class="selectpicker" data-width="fit">
+									<option>All</option>
+                                   	<option data-content='<span class="flag-icon flag-icon-br"></span> Brasil'>Brasil</option>
+                                   	<option  data-content='<span class="flag-icon flag-icon-es"></span> Espanha'>Espanha</option>
+                                   	<option  data-content='<span class="flag-icon flag-icon-ao"></span> Angola'>Espanha</option>
+                                   	<option  data-content='<span class="flag-icon flag-icon-dz"></span> Argelia'>Espanha</option>
+                                   	<option  data-content='<span class="flag-icon flag-icon-bj"></span> Benin'>Benin</option>
+                                   	<option  data-content='<span class="flag-icon flag-icon-bw"></span> Botsuana'>Botsuana</option>
+                                   	<option  data-content='<span class="flag-icon flag-icon-bf"></span> Burkina Faso'>Burkina Faso</option>
+                                   	<option  data-content='<span class="flag-icon flag-icon-bi"></span> Burundi'>Burindi</option>
+                                   	<option  data-content='<span class="flag-icon flag-icon-cv"></span> Cabo Verde'>Cabo Verde</option>
+                                   	<option  data-content='<span class="flag-icon flag-icon-cm"></span> Camarões'>Camarões</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-td"></span> Chade'>Chade</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-km"></span> Comoras'>Comoras</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ci"></span> Costa do Marfim'>Costa do Marfim</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-eg"></span> Egito'>Egito</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-er"></span> Eriteria'>Eriteria</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-et"></span> Etiopia'>Etiopia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ga"></span> Gabao'>Gabao</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-gm"></span> Gambia'>Gambia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-gn"></span> Guinea'>Guinea</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-gq"></span> Guinea Equatorial'>Guinea Equatorial</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-gw"></span> Guinea Bissau'>Guinea Bissau</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ke"></span> Quenia'>Quenia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ls"></span> Lesoto'>Lesoto</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ls"></span> Lesoto'>Lesoto</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-lr"></span> Liberia'>Liberia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ly"></span> Libia'>Libia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-mg"></span> Madagascar'>Madagascar</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-mw"></span> Malaui'>Malaui</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ml"></span> Mali'>Mali</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ma"></span> Marrocos'>Marrocos</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-mu"></span> Mauricio'>Mauricio</option> 
+                                    <option  data-content='<span class="flag-icon flag-icon-mr"></span> Mauritania'>Mauritania</option> 
+                                    <option  data-content='<span class="flag-icon flag-icon-yt"></span> Mauyotte'>Mauyoutte</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-mz"></span> Moçambique'>Moçambique</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-na"></span> Namibia'>Moçambique</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ng"></span> Nigeria'>Nigeria</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ne"></span> Niger'>Niger</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-cf"></span> Republica CentroAfricana'>Niger</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-cd"></span> Republica Democratica do Congo'>Republica Democratica do Congo</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-re"></span> Reunion'>Reunion</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-rw"></span> Ruanda'>Ruanda</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-eh"></span> Sahara Ocidental'>Sahara Ocidental</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-sh"></span> Santa Helena'>Santa Helena</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-st"></span> São Tome Principe'>São Tome Principe</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-sn"></span> Senegal '>Senegal</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-sc"></span> Seychelles '>Seychelles</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-sl"></span> Serra Leoa '>Serra Leoa</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-so"></span> Somalia '>Somalia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-sz"></span> Suazilandia '>Suazilandia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-za"></span> Africa do Sul'>Africa do Sul</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-sd"></span> Sudão'>Sudão</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ss"></span> Sudão do Sul'>Sudão do Sul</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-tz"></span> Tanzania'>Tanzania</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-tg"></span> Tongo'>Tongo</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-tn"></span> Tunisia'>Tunisia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-tn"></span> Tunisia'>Tunisia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ug"></span> Uganda'>Uganda</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-dj"></span> yubiti'>yubiti</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-zm"></span> Zambia'>Zambia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-zw"></span> Zimbabue'>Zimbabue</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ai"></span> Anguilla'>Anguilla</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ag"></span> Antigua Barbuda'>Antigua Barbuda</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ar"></span> Argentina'>Argentina</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-aw"></span> Aruba'>Aruba</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-bs"></span> Bahamas'>Bahamas</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-bb"></span> Barbados'>Barbados</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-bz"></span> Belize'>Belize</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-bm"></span> Bermudas'>Bermudas</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-bo"></span> Bolivia'>Bolivia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-br"></span> Brasil'>Brasil</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ca"></span> Canada'>Canada</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-cl"></span> Chile'>Chile</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-co"></span> Colombia'>Colombia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-cr"></span> Costa Rica'>Costa Rica</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-cu"></span> Cuba'>Cuba</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-cw"></span> Curazao'>Curazao</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-dm"></span> Dominica'>Dominica</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-ec"></span> Equador'>Equador</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-sv"></span> El Salvador'>El Salavador</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-us"></span> Estados Unidos'>Estados Unidos</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-fk"></span> Ilhas Malvinas'>Ilhas Malvinas</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-gd"></span> Granada'>Granda</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-gl"></span> Groelandia'>Groelandia</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-gp"></span> Guadalupe'>Guadalupe</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-gt"></span> Guatemala'>Guatemala</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-gf"></span> Guatemala Francesa'>Guatemala Francesa</option>
+                                    <option  data-content='<span class="flag-icon flag-icon-gy"></span> Guyana'>Guyana</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-ht"></span> Haiti'>Haiti</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-hn"></span> Honduras'>Honduras</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-ky"></span> Ilhas Caiman'>Ilhas Caiman</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-tc"></span> Ilhas turcas y caicos'>Ilhas turcas y caicos </option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-vg"></span> Ilhas virgens Britanica'>Ilhas virgens Britanica</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-vg"></span> Ilhas virgens Britanica'>Ilhas virgens Britanica</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-vg"></span> Ilhas virgens dos Estados Unidos'>Ilhas virgens Estados Unidos</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-jm"></span> Jamaica'>Jamaica</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-mq"></span> Martinica'>Martinica</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-ms"></span> Montserrat'>Martinica</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-mx"></span> Mexico'>Mexico</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-an"></span> Netherlands Antillies'>Netherlands Antillies</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-ni"></span> Nicaragua'>Nicaragua</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-pa"></span> Panama'>Panama</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-py"></span> Paraguai'>Paraguai</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-pe"></span> Peru'>Peru</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-pr"></span> Porto Rico'>Porto Rico</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-do"></span> Republica Dominicana'>Porto Rico</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-kn"></span> Santa Lucia das Neves'>Porto Rico</option>
+                                    <option  data-content='<span class="flag-icon  flag-icon-lc"></span> Santa Lucia'>Santa Lucia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-pm"></span> Saint Pierre and Miquelon'>Santa Lucia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-vc"></span> Saint vicente e granada'>São vicente e granada</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-sx"></span> São Martin'>São vicente e granada</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-sr"></span> Suriname'>Suriname</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-tt"></span> Trinidade Tobaco'>Trinidade Tobaco</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-uy"></span> Uruguai'>Uruguai</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ve"></span> Venezuela'>Venezuela</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-af"></span> Afeganistão'>Afeganistão</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-sa"></span> Arabia Saudita'>Arabia Saudita</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-am"></span> Armenia'>Armenia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-az"></span> Azerbaijão'>Azerbaijão</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-bd"></span> Bangladesh'>Bangladesh</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-bh"></span> Barein'>Barein</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-mm"></span> Birmania'>Birmania</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-bn"></span> Brunei'>Brunei</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-bt"></span> Butao'>Butao</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-kh"></span> Camboja'>Camboja</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-qa"></span> Catar'>Catar</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-qa"></span> Catar'>Catar</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-cn"></span> China'>China</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-cy"></span> Chipre'>Chipre</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-kp"></span> Coreia do norte'>Coreia do Norte</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-kr"></span> Coreia do Sul'>Coreia do Sul</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ae"></span> Emirados Arabes Unidos'>Emirades Arabes Unidos</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ge"></span> Georgia'>Goergia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-hk"></span> Hong kong'>Hong Kong</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-in"></span> India'>India</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-id"></span> Indonesia'>Indonesia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-iq"></span> Iraque'>Iraque</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ir"></span> Irá'>Irá</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-jp"></span> Japão'>Japão</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-jo"></span> Jordania'>Jordania</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-kz"></span> Kazaquistão'>Kazaquistão</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-kg"></span> Kirquistão'>Kirquistão</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-kw"></span> Kuwait'>Kuwait</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-la"></span> Laos'>Laos</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-lb"></span> Libano'>Libano</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-mo"></span> Macao'>Macao</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-my"></span> Malasia'>Malasia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-mv"></span> Maldivas'>Maldivas</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-mn"></span> Mongolia'>Mongolia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-np"></span> Mongolia'>Nepal</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-om"></span> omã'>omã</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-pk"></span> Paquistão'>Paquistão</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ps"></span> Palestina'>Paquistão</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-sg"></span> Singapura'>Singapura</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-sy"></span> Siria'>Siria</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ik"></span> Sri Lanka'>Siria</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-th"></span> Tailandia'>Tailandia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-tw"></span> Taiwan'>Tailandia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-tj"></span> Taguiquistão'>Tailandia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-tl"></span> Timor Ocidental'>Tailandia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-tm"></span> Turcumenistão'>Turcumenistão</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-tr"></span> Turquia'>Turquia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-uz"></span> Usbequistão'>Usbequistão</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-vn"></span> Vietna'>Vietna</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ye"></span> Yemen'>Yemen</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ax"></span> Aland islands'>Aland islands</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-al"></span> Albania'>Albania</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-de"></span> Alemanha'>Albania</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ad"></span> Andorra'>Andorra</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-at"></span> Austria'>Austria</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-by"></span> Bielorussia'>Bielorussia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ba"></span> Bosnia Herzegovina'>Bosnia Herzegovina</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-bg"></span> Bulgaria'>Bulgaria</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-be"></span> Belgica'>Belgica</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-va"></span> cidade do Vaticano'>Cidade do Vaticano</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-hr"></span> Croacia'>Croacia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-dk"></span> Dinamarca'>Dinamarca</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-sk"></span> Eslovaquia'>Eslovaquia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-si"></span> Eslovenia'>Eslovenia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-es"></span> Espanha'>Espanha</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ee"></span> Estonia'>Estonia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-fi"></span> Filandia'>Filandia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-fr"></span> França'>França</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-gi"></span> Gilbaltra'>Gilbaltra</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-gr"></span> Grecia'>Grecia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-gg"></span> Guernesey'>Guernesey</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-hu"></span> Hungria'>Hungria</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ie"></span> Irlanda'>Irlanda</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-is"></span> Islandia'>Islandia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-fo"></span> Ilhas Faroe'>Ilhas Faroe</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-im"></span> Isle of man'>Isle of man</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-it"></span> Italia'>Italia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-je"></span> jersey'>jersey</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-xk"></span> Kosovo'>Kosovo</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-lv"></span> Letonia'>Letonia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-li"></span> Liechtenstein'>Letonia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-lt"></span> Lituania'>Litunia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-lu"></span> Luxemburgo'>Luxemburgo</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-mt"></span> Malta'>Malta</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-md"></span> Moldavia'>Moldavia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-me"></span> Montenegro'>Montenegro</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-mc"></span> Monaco'>Monaco</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-no"></span> Noruega'>Noruega</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-nl"></span> Paises Baixos'>Paies Baixos</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-pl"></span> Polonia'>Polonia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-pt"></span> Portugal'>Portugal</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-gb"></span> Reino Unido'>Reino Unido</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-cz"></span> Republica Tcheca'>Republica Tcheca</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ro"></span> Romenia'>Romenia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ru"></span> Russia'>Russia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-sm"></span> San Marino'>San Marino</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-rs"></span> Servia'>Servia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-se"></span> Suecia'>Suecia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ch"></span> Suiça'>Suiça</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-sj"></span> Svalbard and Jan Mayen'>Svalbard and Jan Mayen</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ua"></span> Ucrania'>Ucrania</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-au"></span> Australia'>Australia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-fj"></span> Ilhas Fiji'>Ilhas Fiji</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-gu"></span> Guam'>Guam</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ck"></span> Ilhas Cook'>Ilhas Cook</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ki"></span> Kiribati'>Kiribati </option>
+                                    <option data-content='<span class="flag-icon  flag-icon-mh"></span> Ilhas Marshall'>Ilhas Marshall</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-fm"></span> Micronesia'>Micronesia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-nr"></span> Nauru'>Micronesia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-nu"></span> Niue'>Niue</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-nf"></span> Norfolk, Isla'>Norfolk, Isla</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-nc"></span> Nueva Caledonia'>Nueva Caledonia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-nz"></span> Nova Zelandia'>Nova Zelandia</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-pw"></span>Palaos'>Palaos</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-pg"></span>Papúa Nueva Guinea'>Papúa Nueva Guinea</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-pn"></span>Pitcairn'>Pitcairn</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-pf"></span> Polinesia Francesa '> Polinesia Francesa </option>
+                                    <option data-content='<span class="flag-icon  flag-icon-ws"></span>Samoa'>Samoa</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-as"></span> Samoa Americana'> Samoa Americana</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-as"></span> Samoa Americana'> Samoa Americana</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-sb"></span>Solomon Islands'> Solomon Islands</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-tk"></span>Tokelau'> Tokelau</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-to"></span> Tonga'> Tonga</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-tv"></span> Tuvalu'> Tuvalu</option>
+                                    <option data-content='<span class="flag-icon  flag-icon-vu"></span>Vanuatu '>Vanuatu </option>
+                                    <option data-content='<span class="flag-icon  flag-icon-wf"></span>Wallis y Futuna'>Wallis y Futuna</option>
+                                   </select>
+                              </div>
+							</div>
+						</div>
+
+						<!--Create box body chat and input message-->
+						<div class="chat">
+							<!--Body message-->
+							<div class="body-msg">
+								<div class="chat-welcome">
+									<h1>Bem vindo ao <img src="favicon.ico"> Chat Video</h1>
+									<h3>Chat de Vídeo Aleatório</h3>
+								</div>
+
+								<div class="chat-counter">
+									<p>Utilizadores Online:</p>
+								</div>
+
+								<!--Create buttons gender -->
+								<div class="btn-chat">
+	  								<button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btngenero" onchange="selectGender(this)">Gênero</button>
+	  									<div class="dropdown-menu">
+	    									<a class="dropdown-item" href="#" value="feminino"><i class="fas fa-venus" id="venus"></i> Feminino</a>
+	    									<a class="dropdown-item" href="#" value="masculino"><i class="fas fa-mars" id="mars"></i> Masculino</a>
+	    									<a class="dropdown-item" href="#" value="outro"><i class="fas fa-genderless" id="genderless"></i> Outro</a>
+	  									</div>
+								</div>
+							</div>
+
+							<!--Box input message -->
+							<div class="input-msg">
+								<!--Create border -->
+								<div id="border">
+									<div class="border-icon"></div>
+								</div>
+								<!-- Create area input text -->
+								<div class="lead emoji-picker-container" id="p-emoji">
+    								<textarea class="form-control textarea-control" id="text-area" rows="3" placeholder="Escreva aqui sua mensagem e aperte a tecla Enter" data-emojiable="true" data-emoji-input="unicode"></textarea>
+    								<script>
+    									$(function() {
+											window.emojiPicker = new EmojiPicker({
+												emojiable_selector: '[data-emojiable=true]',
+												assetsPath: 'emojipicker/lib/img/',
+												popupButtonClasses: 'fa fa-smile-o'
+											});
+											window.emojiPicker.discover();
+										});
+    								</script>
+   								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="emojipicker/lib/js/config.js"></script>
+		<script src="emojipicker/lib/js/util.js"></script>
+		<script src="emojipicker/lib/js/jquery.emojiarea.js"></script>
+		<script src="emojipicker/lib/js/emoji-picker.js"></script>
+		<script type="text/javascript" src="chat.js"></script>
+  	</body>
+</html>
