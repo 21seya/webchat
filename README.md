@@ -1,1 +1,1 @@
-# WEBCHAT Um Sistema de webrtc com conexão de bate papo web.
+# WEBCHAT Um Sistema webrtc de bate papo web.
